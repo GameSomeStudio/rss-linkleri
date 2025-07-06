@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>RSS Ayarları</title>
+    <meta charset="UTF-8" />
+    <style>
+        body { 
+            font-family: Arial, sans-serif; 
+            margin: 20px; 
+            padding: 15px;
+            background-color: #f9f9f9; 
+            color: #333;
+            max-width: 600px;
+            box-sizing: border-box;
+        }
+        label, select, button, div { display: block; margin-bottom: 10px; }
+        #rssStatus { color: red; font-weight: bold; }
+        
+        /* Kapatma butonu */
+        .close-btn {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: #e74c3c;
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 30px;
+            height: 30px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+        
+        /* Başlık düzeni */
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+            border-bottom: 1px solid #ddd;
+            padding-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>RSS Ayarları</h1>
+        <button class="close-btn" id="closeBtn">X</button>
+    </div>
+
+    <label for="categorySelect">Kategori Seç:</label>
+    <select id="categorySelect">
+        <option value="">-- Kategori seçin --</option>
+    </select>
+
+    <label for="rssSelect">RSS Seç:</label>
+    <select id="rssSelect" disabled>
+        <option value="">-- Önce kategori seçin --</option>
+    </select>
+
+    <button id="addRssBtn" disabled>RSS Ekle</button>
+    <div id="rssStatus"></div>
+
+    <h2>Ekli RSS Listesi</h2>
+    <ul id="rssListContainer"></ul>
+
+    <hr>
+
+    <label for="intervalSelect">Haber Güncelleme Aralığı (dakika):</label>
+    <select id="intervalSelect">
+        <option value="1">1 Dakika</option>
+        <option value="5">5 Dakika</option>
+        <option value="15">15 Dakika</option>
+        <option value="30">30 Dakika</option>
+        <option value="60">60 Dakika</option>
+    </select>
+    <div id="intervalStatus"></div>
+
+    <script src="options.js"></script>
+</body>
+</html>
